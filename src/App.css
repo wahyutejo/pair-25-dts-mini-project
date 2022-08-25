@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 .App-logo {
@@ -15,7 +17,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +37,21 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+h4{
+  text-align: left;
+  padding-left: 2rem;
+  margin-bottom: 0.5rem;
+  margin-top: 5rem
+;}
+
+.card{
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.footer{
+  margin-top : 5rem;
 }
