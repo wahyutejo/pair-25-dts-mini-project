@@ -39,19 +39,17 @@
   }
 }
 
-h4{
+h4 {
   text-align: left;
   padding-left: 2rem;
   margin-bottom: 0.5rem;
-  margin-top: 5rem
-;}
-
-.card{
-  display: flex;
-  flex-direction: row;
-  
+  margin-top: 5rem;
 }
 
-.footer{
-  margin-top : 5rem;
+.card {
+  margin-top: 3rem;
+}
+
+.footer {
+  margin-top: 5rem;
 }

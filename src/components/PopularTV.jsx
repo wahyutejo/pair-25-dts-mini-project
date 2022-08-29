@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { tmdb } from "../Api/Tmdbapi";
 import CardMovie from "./CardMovie";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const PopularTV = () => {
   const [tv, setTV] = useState([]);
@@ -16,12 +19,20 @@ const PopularTV = () => {
     dataTV();
   }, []);
 
+  const settings = {
+    dots: false,
+    slidesToShow: 5,
+    autoplay: true,
+    speed: 100,
+    infinite: true,
+    slidesToScroll: 1,
+  };
   return (
-    <>
+    <Slider {...settings}>
       {tv.map((tvShow) => {
-        return <CardMovie key={tvShow.id} image={tvShow.poster_path} />;
+        return <CardMovie key={tvShow.id} image={tvShow.poster_path} id={tvShow.id} title={tvShow.title} />;
       })}
-    </>
+    </Slider>
   );
 };
 

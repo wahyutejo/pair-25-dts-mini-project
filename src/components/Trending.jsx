@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import {tmdb} from "../Api/Tmdbapi";
-import CardBig from "./CardBig";
+import { tmdb } from "../Api/Tmdbapi";
+import TopCard from "./TopCard";
+import Carousel from "react-material-ui-carousel";
 
 const Trending = () => {
   const [movies, setMovies] = useState([]);
@@ -18,13 +19,11 @@ const Trending = () => {
   }, []);
 
   return (
-    <>
-     
-        {movies.map((movie) => {
-          return <CardBig key={movie.id} image={movie.poster_path} />;
-        })}
-  
-    </>
+    <Carousel>
+      {movies.map((movie) => {
+        return <TopCard key={movie.id} backdrop={movie.backdrop_path} overview={movie.overview} title={movie.title} release={movie.release_date} id={movie.id} />;
+      })}
+    </Carousel>
   );
 };
 

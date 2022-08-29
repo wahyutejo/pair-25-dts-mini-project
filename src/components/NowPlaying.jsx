@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { tmdb } from "../Api/Tmdbapi";
-import TopCard from "./TopCard";
-import Carousel from "react-material-ui-carousel";
+import CardBig from "./CardBig";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const NowPlaying = () => {
   const [movies, setMovies] = useState([]);
@@ -18,12 +20,21 @@ const NowPlaying = () => {
     dataMovie();
   }, []);
 
+  const settings = {
+    dots: false,
+    slidesToShow: 3,
+    autoplay: true,
+    speed: 100,
+    infinite: true,
+    slidesToScroll: 1,
+  };
+
   return (
-    <Carousel>
+    <Slider {...settings}>
       {movies.map((movie) => {
-        return <TopCard key={movie.id} image={movie.poster_path} title={movie.title} release={movie.release_date} overview={movie.overview} />;
+        return <CardBig key={movie.id} image={movie.poster_path} title={movie.title} id={movie.id} />;
       })}
-    </Carousel>
+    </Slider>
   );
 };
 

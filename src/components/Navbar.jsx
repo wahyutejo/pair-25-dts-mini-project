@@ -1,8 +1,7 @@
 import React from "react";
 import { Toolbar, AppBar, Typography, List, ListItem } from "@mui/material";
-// import SearchIcon from "@mui/icons-material/Search";
-// import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
-// import NotificationsIcon from "@mui/icons-material/Notifications";
+
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -24,10 +23,18 @@ const Navbar = () => {
               justifyContent: "space-between",
             }}
           >
-            <ListItem sx={{ flexShrink: 2 }}>Home</ListItem>
-            <ListItem sx={{ flexShrink: 2 }}>Series</ListItem>
-            <ListItem sx={{ flexShrink: 2 }}>Movies</ListItem>
-            <ListItem sx={{ flexShrink: 1.5 }}>New and Popular</ListItem>
+            <ListItem sx={{ flexShrink: 2 }}>
+              <Link to="/">Home</Link>
+            </ListItem>
+            <ListItem sx={{ flexShrink: 2 }}>
+              <Link to="/tvseries">Series</Link>
+            </ListItem>
+            <ListItem sx={{ flexShrink: 2 }}>
+              <Link to="/movies">Movies</Link>
+            </ListItem>
+            <ListItem sx={{ flexShrink: 1.5 }}>
+              <Link to="/newandpopular">New and Popular</Link>
+            </ListItem>
             <ListItem sx={{ flexShrink: 2 }}>MyList</ListItem>
           </List>
         </Toolbar>
@@ -38,17 +45,7 @@ const Navbar = () => {
             flexBasis: "20%",
           }}
         >
-          {/* <ListItem>
-            <SearchIcon />
-          </ListItem>
-          <ListItem>User</ListItem>
-          <ListItem>
-            <CardGiftcardIcon />
-          </ListItem>
-          <ListItem>
-            <NotificationsIcon />
-          </ListItem> */}
-          <ListItem>MyList</ListItem>
+          <ListItem>Login</ListItem>
         </List>
       </Typography>
     </AppBar>

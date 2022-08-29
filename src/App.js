@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { Container, Box, Typography } from "@mui/material";
 import PopularMovie from "./components/PopularMovie";
 import TopRated from "./components/TopRated";
 import PopularTV from "./components/PopularTV";
@@ -10,42 +11,55 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App">
+    <Container className="App">
       <header className="App-header">
         <Navbar />
       </header>
 
       <main>
-        <div className="card">
-          <NowPlaying />
-        </div>
-
-        <h4>Popular</h4>
-
-        <div className="card">
-          <PopularMovie />
-        </div>
-        <h4>Top Rated</h4>
-
-        <div className="card">
-          <TopRated />
-        </div>
-        <h4>TV Popular</h4>
-
-        <div className="card">
-          <PopularTV />
-        </div>
-
-        <h4>Trending</h4>
-        <div className="card">
+        <Box>
           <Trending />
-        </div>
+        </Box>
 
-        <div className="footer">
+        <Box className="card">
+          <Typography variant="h4" sx={{ mb: 1 }}>
+            Popular
+          </Typography>
+
+          <Box>
+            <PopularMovie />
+          </Box>
+        </Box>
+
+        <Box className="card">
+          <Typography variant="h4" sx={{ mb: 1 }}>
+            Top Rated
+          </Typography>
+          <Box>
+            <TopRated />
+          </Box>
+        </Box>
+        <Box className="card">
+          <Typography variant="h4" sx={{ mb: 1 }}>
+            TV Popular
+          </Typography>
+          <Box>
+            <PopularTV />
+          </Box>
+        </Box>
+        <Box className="card">
+          <Typography variant="h4" sx={{ mb: 1 }}>
+            Now Playing
+          </Typography>
+          <Box>
+            <NowPlaying />
+          </Box>
+        </Box>
+        <Box className="footer">
           <Footer />
-        </div>
+        </Box>
       </main>
-    </div>
+    </Container>
   );
 }
 
