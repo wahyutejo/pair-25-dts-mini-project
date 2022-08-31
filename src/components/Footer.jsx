@@ -4,10 +4,10 @@ import { Container, List, ListItem, Box, Button, Typography } from "@mui/materia
 const Footer = () => {
   return (
     <Container>
-      <Box>
-        <Typography sx={{ display: "flex", flexDirection: "row", justifyContent: "center", gap: 20, py: 2 }}>
-          <Box>
-            <List>
+      <Box sx={{ display: "flex", flexDirection: "row", justifyContent: "center", gap: 20, py: 2 }}>
+        <Box>
+          <List>
+            <Typography>
               <ListItem>Audio and Subtitles</ListItem>
               <ListItem>Media Center</ListItem>
               <ListItem>Security</ListItem>
@@ -16,33 +16,39 @@ const Footer = () => {
                 <Button sx={{ border: "solid", color: "black" }}>Service Code</Button>
               </ListItem>
               <ListItem>2022 Movies allright reserved</ListItem>
-            </List>
-          </Box>
+            </Typography>
+          </List>
+        </Box>
 
-          <Box>
-            <List>
+        <Box>
+          <List>
+            <Typography>
               <ListItem>Audio Description</ListItem>
               <ListItem>Investor Relations</ListItem>
               <ListItem>Legal Provisions</ListItem>
-            </List>
-          </Box>
+            </Typography>
+          </List>
+        </Box>
 
-          <Box>
-            <List>
+        <Box>
+          <List>
+            <Typography>
               <ListItem>Help Center</ListItem>
               <ListItem>Jobs</ListItem>
               <ListItem>Cookies Preferences</ListItem>
-            </List>
-          </Box>
+            </Typography>
+          </List>
+        </Box>
 
-          <Box>
-            <List>
+        <Box>
+          <List>
+            <Typography>
               <ListItem>Gift Cards</ListItem>
               <ListItem>Term of Use</ListItem>
               <ListItem>Corporate Information</ListItem>
-            </List>
-          </Box>
-        </Typography>
+            </Typography>
+          </List>
+        </Box>
       </Box>
     </Container>
   );

@@ -12,53 +12,49 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <Container className="App">
-      <header className="App-header">
+      <Box className="App-header">
         <Navbar />
-      </header>
+      </Box>
+      <Box>
+        <Trending />
+      </Box>
+      <Box className="card">
+        <Typography variant="h4" sx={{ mb: 1 }}>
+          Popular
+        </Typography>
 
-      <main>
         <Box>
-          <Trending />
+          <PopularMovie />
         </Box>
+      </Box>
 
-        <Box className="card">
-          <Typography variant="h4" sx={{ mb: 1 }}>
-            Popular
-          </Typography>
-
-          <Box>
-            <PopularMovie />
-          </Box>
+      <Box className="card">
+        <Typography variant="h4" sx={{ mb: 1 }}>
+          Top Rated
+        </Typography>
+        <Box>
+          <TopRated />
         </Box>
-
-        <Box className="card">
-          <Typography variant="h4" sx={{ mb: 1 }}>
-            Top Rated
-          </Typography>
-          <Box>
-            <TopRated />
-          </Box>
+      </Box>
+      <Box className="card">
+        <Typography variant="h4" sx={{ mb: 1 }}>
+          TV Popular
+        </Typography>
+        <Box>
+          <PopularTV />
         </Box>
-        <Box className="card">
-          <Typography variant="h4" sx={{ mb: 1 }}>
-            TV Popular
-          </Typography>
-          <Box>
-            <PopularTV />
-          </Box>
+      </Box>
+      <Box className="card">
+        <Typography variant="h4" sx={{ mb: 1 }}>
+          Now Playing
+        </Typography>
+        <Box>
+          <NowPlaying />
         </Box>
-        <Box className="card">
-          <Typography variant="h4" sx={{ mb: 1 }}>
-            Now Playing
-          </Typography>
-          <Box>
-            <NowPlaying />
-          </Box>
-        </Box>
-        <Box className="footer">
-          <Footer />
-        </Box>
-      </main>
+      </Box>
+      <Box className="footer">
+        <Footer />
+      </Box>
     </Container>
   );
 }

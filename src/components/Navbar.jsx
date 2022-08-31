@@ -1,12 +1,26 @@
 import React from "react";
 import { Toolbar, AppBar, Typography, List, ListItem } from "@mui/material";
 
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  function home() {
+    return navigate("/");
+  }
+  function series() {
+    return navigate("/series");
+  }
+  function movies() {
+    return navigate("/movies");
+  }
+  function newandpopular() {
+    return navigate("/newandpopular");
+  }
+
   return (
     <AppBar>
-      <Typography sx={{ display: "flex", justifyContent: "space-between", backgroundColor: "#282c34" }}>
+      <Toolbar sx={{ display: "flex", justifyContent: "space-between", backgroundColor: "#282c34" }}>
         <List
           sx={{
             display: "flex",
@@ -14,30 +28,32 @@ const Navbar = () => {
             flexBasis: "20%",
           }}
         >
-          <ListItem>Hallo Icon</ListItem>
+          <Typography>
+            <ListItem>Home Icon</ListItem>
+          </Typography>
         </List>
-        <Toolbar sx={{ justifyContent: "center" }}>
-          <List
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-            }}
-          >
-            <ListItem sx={{ flexShrink: 2 }}>
-              <Link to="/">Home</Link>
+
+        <List
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <Typography sx={{ display: "flex" }}>
+            <ListItem sx={{ flexShrink: 2, "&:hover": { cursor: "pointer" } }} onClick={home}>
+              Home
             </ListItem>
-            <ListItem sx={{ flexShrink: 2 }}>
-              <Link to="/tvseries">Series</Link>
+            <ListItem sx={{ flexShrink: 2, "&:hover": { cursor: "pointer" } }} onClick={series}>
+              Series
             </ListItem>
-            <ListItem sx={{ flexShrink: 2 }}>
-              <Link to="/movies">Movies</Link>
+            <ListItem sx={{ flexShrink: 2, "&:hover": { cursor: "pointer" } }} onClick={movies}>
+              Movies
             </ListItem>
-            <ListItem sx={{ flexShrink: 1.5 }}>
-              <Link to="/newandpopular">New and Popular</Link>
+            <ListItem sx={{ "&:hover": { cursor: "pointer" } }} onClick={newandpopular}>
+              New and Popular
             </ListItem>
-            <ListItem sx={{ flexShrink: 2 }}>MyList</ListItem>
-          </List>
-        </Toolbar>
+          </Typography>
+        </List>
         <List
           sx={{
             display: "flex",
@@ -45,9 +61,11 @@ const Navbar = () => {
             flexBasis: "20%",
           }}
         >
-          <ListItem>Login</ListItem>
+          <Typography>
+            <ListItem>Login</ListItem>
+          </Typography>
         </List>
-      </Typography>
+      </Toolbar>
     </AppBar>
   );
 };
