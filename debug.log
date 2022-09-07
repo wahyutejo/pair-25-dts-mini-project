@@ -57,3 +57,7 @@
 [0831/014407.111:ERROR:main_dll_loader_win.cc(136)] Failed to load Chrome DLL from C:\Program Files (x86)\Setleaf\Application\58.0.3029.81\chrome.dll: The specified module could not be found. (0x7E)
 [0831/021126.947:ERROR:main_dll_loader_win.cc(136)] Failed to load Chrome DLL from C:\Program Files (x86)\Setleaf\Application\58.0.3029.81\chrome.dll: The specified module could not be found. (0x7E)
 [0901/003245.212:ERROR:main_dll_loader_win.cc(136)] Failed to load Chrome DLL from C:\Program Files (x86)\Setleaf\Application\58.0.3029.81\chrome.dll: The specified module could not be found. (0x7E)
+[0905/225134.475:ERROR:main_dll_loader_win.cc(136)] Failed to load Chrome DLL from C:\Program Files (x86)\Setleaf\Application\58.0.3029.81\chrome.dll: The specified module could not be found. (0x7E)
+[0906/140619.783:ERROR:main_dll_loader_win.cc(136)] Failed to load Chrome DLL from C:\Program Files (x86)\Setleaf\Application\58.0.3029.81\chrome.dll: The specified module could not be found. (0x7E)
+[0907/202750.791:ERROR:main_dll_loader_win.cc(136)] Failed to load Chrome DLL from C:\Program Files (x86)\Setleaf\Application\58.0.3029.81\chrome.dll: The specified module could not be found. (0x7E)
+[0908/001253.447:ERROR:main_dll_loader_win.cc(136)] Failed to load Chrome DLL from C:\Program Files (x86)\Setleaf\Application\58.0.3029.81\chrome.dll: The specified module could not be found. (0x7E)

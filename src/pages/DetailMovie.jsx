@@ -28,9 +28,9 @@ const DetailMovie = () => {
       <Box className="App-header">
         <Navbar />
       </Box>
-      <Box sx={{ display: "flex" }}>
+      <Box sx={{ display: "flex" }} loading="lazy">
         <Box sx={{ width: "50vw", m: 0 }}>
-          <img src={image} alt={movies.title} />
+          <img src={image} alt={movies.title}  />
         </Box>
         <Box sx={{ width: "50vw" }}>
           <Box sx={{ mt: 10, mb: 5, pl: 10 }}>

@@ -6,7 +6,7 @@ const CardMovie = ({ title, image, id }) => {
   const poster = "https://image.tmdb.org/t/p/w200" + image;
 
   return (
-    <Box>
+    <Box loading="lazy">
       <Link to={`/${id}`}>
         <img src={poster} alt={title} />
       </Link>
