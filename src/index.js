@@ -8,6 +8,7 @@ import DetailMovie from "./pages/DetailMovie";
 import TVSeries from "./pages/TVSeries";
 import NewAndPopular from "./pages/NewAndPopular";
 import Movie from "./pages/Movie";
+import DetailTVSeries from "./pages/DetailTVSeries";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,7 +16,8 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/:id" element={<DetailMovie />} />
+        <Route path="/movie/:id" element={<DetailMovie />} />
+        <Route path="/series/:id" element={<DetailTVSeries />} />
         <Route path="/series" element={<TVSeries />} />
         <Route path="/newandpopular" element={<NewAndPopular />} />
         <Route path="/movies" element={<Movie />} />

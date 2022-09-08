@@ -7,7 +7,7 @@ const TopCard = ({ title, backdrop, release, overview, id }) => {
 
   return (
     <Container sx={{ display: "flex", margin: "2rem" }}>
-      <Box sx={{ display: "flex", width: "70vw", flexDirection: "column", margin: "2rem", alignItems: "center", justifyContent: "center" }}>
+      <Box sx={{ display: "flex", flexDirection: "column", margin: "2rem", alignItems: "center", justifyContent: "center" }}>
         <Typography variant="h4" textAlign="center" sx={{ mb: 2 }}>
           {title}
         </Typography>

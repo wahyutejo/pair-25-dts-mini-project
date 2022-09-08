@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { tmdb } from "../Api/Tmdbapi";
-import CardMovie from "../components/CardMovie";
-import { Container, Box, Typography } from "@mui/material";
+
+import { Container, Box, Typography, ImageList, ImageListItem } from "@mui/material";
 import "../App.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import CardList from "../components/CardList";
+import Pagination from "../components/Pagination";
 
 const NewAndPopular = () => {
   const [movies, setMovies] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const postPerPage = 10;
 
   useEffect(() => {
     const dataMovie = async () => {
@@ -21,16 +25,32 @@ const NewAndPopular = () => {
     dataMovie();
   }, []);
 
+  const lastPostIndex = currentPage * postPerPage;
+  const firstPostIndex = lastPostIndex - postPerPage;
+  const currentPost = movies.slice(firstPostIndex, lastPostIndex);
+
   return (
     <Container className="App">
-      <Navbar />
-      <Typography variant="h4">New And Popular</Typography>
-      <Box>
-        {movies.map((movie) => {
-          return <CardMovie key={movie.id} title={movie.title} image={movie.poster_path} id={movie.id} />;
-        })}
+      <Box className="App-header">
+        <Navbar />
       </Box>
-      <Footer />
+
+      <ImageList sx={{ width: 1200 }}>
+        <ImageListItem cols={2}>
+          <Typography variant="h4" textAlign="center">
+            New And Popular
+          </Typography>
+        </ImageListItem>
+
+        {currentPost.map((movie) => {
+          return <CardList key={movie.id} title={movie.title} image={movie.backdrop_path} release={movie.release_date} id={movie.id} />;
+        })}
+      </ImageList>
+      <Pagination totalPosts={movies.length} postsPerPage={postPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} />
+
+      <Box className="footer">
+        <Footer />
+      </Box>
     </Container>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { tmdb } from "../Api/Tmdbapi";
-import CardMovie from "./CardMovie";
+import CardTV from "./CardTV";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -30,7 +30,7 @@ const PopularTV = () => {
   return (
     <Slider {...settings}>
       {tv.map((tvShow) => {
-        return <CardMovie key={tvShow.id} image={tvShow.poster_path} id={tvShow.id} title={tvShow.title} />;
+        return <CardTV key={tvShow.id} image={tvShow.poster_path} id={tvShow.id} title={tvShow.title} />;
       })}
     </Slider>
   );

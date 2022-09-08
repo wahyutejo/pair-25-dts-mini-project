@@ -11,13 +11,13 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <Container className="App">
+    <Container className="App" loading="lazy">
       <Box className="App-header">
         <Navbar />
       </Box>
-      <Box>
+     
         <Trending />
-      </Box>
+     
       <Box className="card">
         <Typography variant="h4" sx={{ mb: 1 }}>
           Popular

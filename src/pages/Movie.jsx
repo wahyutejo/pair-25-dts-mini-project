@@ -7,12 +7,10 @@ import Footer from "../components/Footer";
 import "../App.css";
 import Pagination from "../components/Pagination";
 
-
 const Movie = () => {
   const [movies, setMovies] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const postPerPage = 10;
-  
 
   useEffect(() => {
     const dataMovie = async () => {
@@ -38,18 +36,16 @@ const Movie = () => {
 
       <ImageList sx={{ width: 1200 }}>
         <ImageListItem cols={2}>
-          
-            <Typography variant="h4" textAlign="center">
-              Movies
-            </Typography>
-         
+          <Typography variant="h4" textAlign="center">
+            Movies
+          </Typography>
         </ImageListItem>
 
         {currentPost.map((movie) => {
-          return <CardList key={movie.id} title={movie.title} image={movie.backdrop_path} release={movie.release_date} />;
+          return <CardList key={movie.id} title={movie.title} image={movie.backdrop_path} release={movie.release_date} id={movie.id} />;
         })}
       </ImageList>
-    <Pagination totalPosts={movies.length} postsPerPage={postPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} />
+      <Pagination totalPosts={movies.length} postsPerPage={postPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} />
 
       <Box className="footer">
         <Footer />

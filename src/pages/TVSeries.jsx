@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { tmdb } from "../Api/Tmdbapi";
-import CardMovie from "../components/CardMovie";
-import { Container, Typography, Box } from "@mui/material";
+import { Container, Typography, Box, ImageList, ImageListItem } from "@mui/material";
 import "../App.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import CardListTV from "../components/CardListTV";
+import Pagination from "../components/Pagination";
 
 const TVSeries = () => {
   const [tvseries, setTvSeries] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const postPerPage = 10;
 
   useEffect(() => {
     const dataSeries = async () => {
@@ -21,18 +24,29 @@ const TVSeries = () => {
     dataSeries();
   }, []);
 
-  console.log(tvseries);
+  const lastPostIndex = currentPage * postPerPage;
+  const firstPostIndex = lastPostIndex - postPerPage;
+  const currentPost = tvseries.slice(firstPostIndex, lastPostIndex);
 
   return (
     <Container className="App">
-      <Navbar />
-      <Typography variant="h4">TV Series</Typography>
-      <Box>
-        {tvseries.map((tvShow) => {
-          return <CardMovie key={tvShow.id} image={tvShow.poster_path} id={tvShow.id} title={tvShow.title} />;
-        })}
+      <Box className="App-header">
+        <Navbar />
       </Box>
-      <Footer />
+      <ImageList sx={{ width: 1200 }}>
+        <ImageListItem cols={2}>
+          <Typography variant="h4">TV Series</Typography>
+        </ImageListItem>
+
+        {currentPost.map((tvShow) => {
+          return <CardListTV key={tvShow.id} image={tvShow.backdrop_path} title={tvShow.name} release={tvShow.first_air_date} id={tvShow.id} />;
+        })}
+      </ImageList>
+
+      <Pagination totalPosts={tvseries.length} postsPerPage={postPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} />
+      <Box className="footer">
+        <Footer />
+      </Box>
     </Container>
   );
 };
