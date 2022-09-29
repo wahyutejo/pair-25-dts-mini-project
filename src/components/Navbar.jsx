@@ -1,5 +1,5 @@
 import React from "react";
-import { Toolbar, AppBar, Typography, List, ListItem } from "@mui/material";
+import { Toolbar, AppBar, Typography, List, ListItem, Button } from "@mui/material";
 
 import { useNavigate } from "react-router-dom";
 
@@ -16,6 +16,9 @@ const Navbar = () => {
   }
   function newandpopular() {
     return navigate("/newandpopular");
+  }
+  function loginPage() {
+    return navigate("/login");
   }
 
   return (
@@ -61,9 +64,7 @@ const Navbar = () => {
             flexBasis: "20%",
           }}
         >
-          <Typography>
-            <ListItem>Login</ListItem>
-          </Typography>
+          <Button onClick={loginPage}>Login/Register</Button>
         </List>
       </Toolbar>
     </AppBar>

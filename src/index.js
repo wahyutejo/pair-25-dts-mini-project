@@ -9,6 +9,8 @@ import TVSeries from "./pages/TVSeries";
 import NewAndPopular from "./pages/NewAndPopular";
 import Movie from "./pages/Movie";
 import DetailTVSeries from "./pages/DetailTVSeries";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -21,6 +23,8 @@ root.render(
         <Route path="/series" element={<TVSeries />} />
         <Route path="/newandpopular" element={<NewAndPopular />} />
         <Route path="/movies" element={<Movie />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
